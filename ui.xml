@@ -1,0 +1,230 @@
+<vertical bg="#0F1117">
+
+    <horizontal h="64" bg="#0F1117" gravity="center_vertical" padding="16 0">
+        <text text="微" textSize="22sp" textColor="#FF6B35" typeface="bold"/>
+        <text text="博" textSize="22sp" textColor="#FF8C61" typeface="bold"/>
+        <text text=" 自动化" textSize="18sp" textColor="#E8E8F0" typeface="bold" marginLeft="4"/>
+        <text text=" · AutoX v8" textSize="11sp" textColor="#555577" marginLeft="8"/>
+    </horizontal>
+
+    <View bg="#FF6B35" h="2" w="match_parent"/>
+
+    <ScrollView flex="1" bg="#0F1117">
+        <vertical padding="12 8 12 16">
+
+            <card bg="#1A1B2E" cardCornerRadius="12dp" cardElevation="0dp" w="match_parent" marginBottom="12">
+                <horizontal padding="14 12" gravity="center_vertical">
+                    <View id="statusDot" w="10" h="10" bg="#2ECC71"/>
+                    <text id="tvStatus" text="就绪 — 等待启动" textSize="13sp" textColor="#AAAACC" marginLeft="10" flex="1"/>
+                    <text id="tvCounter" text="剩余 0 条" textSize="13sp" textColor="#FF6B35" typeface="bold"/>
+                </horizontal>
+            </card>
+
+            <card bg="#1A1B2E" cardCornerRadius="12dp" cardElevation="0dp" w="match_parent" marginBottom="12">
+                <vertical padding="16">
+                    <horizontal gravity="center_vertical" marginBottom="14">
+                        <View w="3" h="16" bg="#FF6B35"/>
+                        <text text="业务配置" textSize="14sp" textColor="#E8E8F0" typeface="bold" marginLeft="8"/>
+                    </horizontal>
+
+                    <text text="目标群号" textSize="11sp" textColor="#6666AA" marginBottom="4"/>
+                    <EditText
+                        id="etGroupNumber"
+                        text="0000000"
+                        hint="输入群号"
+                        textSize="14sp"
+                        textColor="#E8E8F0"
+                        hintTextColor="#444466"
+                        inputType="number"
+                        bg="#0F1117"
+                        padding="12 10"
+                        marginBottom="16"
+                    />
+
+                    <horizontal gravity="center_vertical" marginBottom="6">
+                        <View w="3" h="14" bg="#FF6B35"/>
+                        <text text="评论内容列表" textSize="13sp" textColor="#E8E8F0" typeface="bold" marginLeft="8" flex="1"/>
+                        <text id="tvCommentCount" text="共5条" textSize="11sp" textColor="#FF6B35"/>
+                    </horizontal>
+
+                    <text text="每行一条 · 随机顺序 · 用完自动停止" textSize="10sp" textColor="#555577" marginBottom="8"/>
+
+                    <EditText
+                        id="etCommentList"
+                        text="壁纸不错，已保存"
+                        hint="每行输入一条评论内容..."
+                        textSize="13sp"
+                        textColor="#E8E8F0"
+                        hintTextColor="#444466"
+                        bg="#0F1117"
+                        padding="12 10"
+                        minLines="6"
+                        maxLines="12"
+                        gravity="top"
+                        inputType="textMultiLine"
+                        scrollbars="vertical"
+                        marginBottom="4"
+                    />
+                </vertical>
+            </card>
+
+            <card bg="#1A1B2E" cardCornerRadius="12dp" cardElevation="0dp" w="match_parent" marginBottom="12">
+                <vertical padding="16">
+                    <horizontal gravity="center_vertical" marginBottom="14">
+                        <View w="3" h="16" bg="#7C6FFF"/>
+                        <text text="循环配置" textSize="14sp" textColor="#E8E8F0" typeface="bold" marginLeft="8"/>
+                    </horizontal>
+
+                    <horizontal gravity="center_vertical" marginBottom="12">
+                        <vertical flex="1" marginRight="8">
+                            <text text="轮询间隔(ms)" textSize="11sp" textColor="#6666AA" marginBottom="4"/>
+                            <EditText
+                                id="etRepeatInterval"
+                                text="3000"
+                                hint="毫秒"
+                                textSize="14sp"
+                                textColor="#E8E8F0"
+                                hintTextColor="#444466"
+                                inputType="number"
+                                bg="#0F1117"
+                                padding="12 10"
+                            />
+                        </vertical>
+                        <vertical flex="1" marginLeft="8">
+                            <text text="模块间隔(ms)" textSize="11sp" textColor="#6666AA" marginBottom="4"/>
+                            <EditText
+                                id="etModuleInterval"
+                                text="3000"
+                                hint="毫秒"
+                                textSize="14sp"
+                                textColor="#E8E8F0"
+                                hintTextColor="#444466"
+                                inputType="number"
+                                bg="#0F1117"
+                                padding="12 10"
+                            />
+                        </vertical>
+                    </horizontal>
+                    
+                    <horizontal gravity="center_vertical" marginBottom="12">
+                        <vertical flex="1" marginRight="8">
+                            <text text="下滑高度(px)" textSize="11sp" textColor="#6666AA" marginBottom="4"/>
+                            <EditText
+                                id="etScrollHeight"
+                                text="500"
+                                hint="像素"
+                                textSize="14sp"
+                                textColor="#E8E8F0"
+                                hintTextColor="#444466"
+                                inputType="number"
+                                bg="#0F1117"
+                                padding="12 10"
+                            />
+                        </vertical>
+                        <vertical flex="1" marginLeft="8">
+                            <text text="下滑时长(ms)" textSize="11sp" textColor="#6666AA" marginBottom="4"/>
+                            <EditText
+                                id="etScrollDuration"
+                                text="400"
+                                hint="毫秒"
+                                textSize="14sp"
+                                textColor="#E8E8F0"
+                                hintTextColor="#444466"
+                                inputType="number"
+                                bg="#0F1117"
+                                padding="12 10"
+                            />
+                        </vertical>
+                    </horizontal>
+
+                    <button
+                        id="btnSaveConfig"
+                        text="💾 保存配置"
+                        textSize="13sp"
+                        textColor="#E8E8F0"
+                        bg="#252640"
+                        padding="0 10"
+                        h="40"
+                    />
+                </vertical>
+            </card>
+
+            <card bg="#1A1B2E" cardCornerRadius="12dp" cardElevation="0dp" w="match_parent" marginBottom="12">
+                <vertical padding="16">
+                    <horizontal gravity="center_vertical" marginBottom="14">
+                        <View w="3" h="16" bg="#E74C3C"/>
+                        <text text="举报配置" textSize="14sp" textColor="#E8E8F0" typeface="bold" marginLeft="8"/>
+                    </horizontal>
+
+                    <horizontal gravity="center_vertical" marginBottom="12">
+                        <Switch
+                            id="switchReport"
+                            checked="false"
+                            text="启用举报功能"
+                            textSize="13sp"
+                            textColor="#E8E8F0"
+                            trackColor="#0F1117"
+                            thumbColor="#FF6B35"
+                            flex="1"
+                        />
+                    </horizontal>
+
+                    <vertical marginBottom="4">
+                        <text text="举报条数" textSize="11sp" textColor="#6666AA" marginBottom="4"/>
+                        <EditText
+                            id="etReportCount"
+                            text="5"
+                            hint="输入要举报的条数"
+                            textSize="14sp"
+                            textColor="#E8E8F0"
+                            hintTextColor="#444466"
+                            inputType="number"
+                            bg="#0F1117"
+                            padding="12 10"
+                        />
+                    </vertical>
+                </vertical>
+            </card>
+
+            <horizontal marginBottom="12">
+                <button
+                    id="btnStart"
+                    text="▶  启动"
+                    textSize="15sp"
+                    textColor="#FFFFFF"
+                    typeface="bold"
+                    bg="#FF6B35"
+                    h="48"
+                    flex="1"
+                    marginRight="8"
+                />
+                <button
+                    id="btnStop"
+                    text="■  停止"
+                    textSize="15sp"
+                    textColor="#FFFFFF"
+                    typeface="bold"
+                    bg="#2A1B2E"
+                    h="48"
+                    flex="1"
+                    marginLeft="8"
+                />
+            </horizontal>
+
+            <card bg="#1A1B2E" cardCornerRadius="12dp" cardElevation="0dp" w="match_parent">
+                <vertical padding="16">
+                    <horizontal gravity="center_vertical" marginBottom="10">
+                        <View w="3" h="16" bg="#2ECC71"/>
+                        <text text="运行日志" textSize="14sp" textColor="#E8E8F0" typeface="bold" marginLeft="8" flex="1"/>
+                        <button id="btnClearLog" text="清空" textSize="11sp" textColor="#6666AA" bg="#0F1117" padding="6 4" h="28"/>
+                    </horizontal>
+                    <ScrollView h="220">
+                        <text id="tvLog" textSize="12sp" textColor="#7777AA" selectable="true" lineSpacingExtra="3"/>
+                    </ScrollView>
+                </vertical>
+            </card>
+
+        </vertical>
+    </ScrollView>
+
+</vertical>
